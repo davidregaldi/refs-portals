@@ -5,8 +5,7 @@ export default function Player() {
   const [enteredPlayerName, SetEnteredPlayerName] = useState(null);
 
   function handleClick() {
-    SetEnteredPlayerName(playerName.current.value.trim());
-    playerName.current.value = playerName.current.value.trim();
+    SetEnteredPlayerName(playerName.current.value = playerName.current.value.trim());
   }
 
   return (
@@ -16,7 +15,7 @@ export default function Player() {
         <input
           ref={playerName}
           type="text"
-          onClick={() => playerName.current.value = ''}
+          onClick={() => { playerName.current.value = ''; }}
         />
         <button onClick={handleClick}>Set Name</button>
       </p>
